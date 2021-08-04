@@ -3,23 +3,20 @@ import 'assets/styles/global/index.less';
 
 import { ConnectedRouter } from 'connected-react-router';
 import React from 'react';
-import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import AppRoutes from 'routes';
 import configureStore, { history } from 'store';
 
-function App() {
+const App: React.FC = () => {
   const store = configureStore({});
 
   return (
-    <AppContainer>
-      <Provider store={store}>
-        <ConnectedRouter history={history}>
-          <AppRoutes></AppRoutes>
-        </ConnectedRouter>
-      </Provider>
-    </AppContainer>
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <AppRoutes></AppRoutes>
+      </ConnectedRouter>
+    </Provider>
   );
-}
+};
 
 export default App;
