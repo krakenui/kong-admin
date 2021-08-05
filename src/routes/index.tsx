@@ -1,6 +1,6 @@
-import { Route, Switch } from 'react-router-dom';
-import React from 'react';
 import HomePage from 'pages/Home';
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
 const AppRoutes: React.FC = () => {
   return (
