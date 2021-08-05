@@ -3,10 +3,10 @@ import 'assets/styles/default.css';
 import 'assets/styles/global/index.less';
 import 'assets/styles/kong-react-admin.less';
 
+import AppLayout from 'components/AppLayout';
 import { ConnectedRouter } from 'connected-react-router';
 import React from 'react';
 import { Provider } from 'react-redux';
-import AppRoutes from 'routes';
 import configureStore, { history } from 'store';
 
 const App: React.FC = () => {
@@ -15,7 +15,7 @@ const App: React.FC = () => {
   return (
     <Provider store={store}>
       <ConnectedRouter history={history}>
-        <AppRoutes></AppRoutes>
+        <AppLayout></AppLayout>
       </ConnectedRouter>
     </Provider>
   );

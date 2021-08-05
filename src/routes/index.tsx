@@ -1,26 +1,18 @@
-import { ConfigProvider } from 'antd';
-import HorizontalDefault from 'components/Topbar';
-import AppLocale from 'locales';
-import HomePage from 'pages/Home';
+import asyncComponent from 'components/AsyncComponent';
 import React from 'react';
-import { IntlProvider } from 'react-intl';
-import { useSelector } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
-const AppRoutes: React.FC = () => {
-  const { locale } = useSelector((state: any) => state.settings);
-  const currentAppLocale = AppLocale[locale.locale];
+const HomePage = asyncComponent(() => import('pages/Home'));
+
+const AppRoutes: React.FC<any> = () => {
+  const match = useRouteMatch();
 
   return (
-    <ConfigProvider locale={currentAppLocale.antd}>
-      <IntlProvider locale={currentAppLocale.locale} messages={currentAppLocale.messages}>
-        <HorizontalDefault></HorizontalDefault>
-
-        <Switch>
-          <Route path="/" component={HomePage} />
-        </Switch>
-      </IntlProvider>
-    </ConfigProvider>
+    <div className="kd-main-content-wrapper">
+      <Switch>
+        <Route path={match.url + '/'} component={HomePage} />
+      </Switch>
+    </div>
   );
 };
 

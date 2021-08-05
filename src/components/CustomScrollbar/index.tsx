@@ -1,7 +1,7 @@
 import React from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
 
-const CustomScrollbars: React.FC = (props) => (
+const CustomScrollbars: React.FC<any> = (props) => (
   <Scrollbars
     {...props}
     autoHide

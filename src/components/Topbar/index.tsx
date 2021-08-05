@@ -3,13 +3,13 @@ import 'flag-icon-css/less/flag-icon.less';
 import { Layout, Popover } from 'antd';
 import wlogo from 'assets/images/w-logo.png';
 import Auxiliary from 'components/Auxiliary';
-import CustomScrollbars from 'components/Sidebar';
 import UserInfo from 'components/UserInfo';
 import { languageData } from 'locales';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { NAV_STYLE_DRAWER, NAV_STYLE_FIXED, NAV_STYLE_MINI_SIDEBAR, TAB_SIZE } from 'store/ActionTypes';
+import CustomScrollbars from 'components/CustomScrollbar';
 
 const { Header } = Layout;
 
@@ -17,8 +17,6 @@ const Topbar = () => {
   const { locale, width, navStyle } = useSelector((state: any) => state.settings);
   const { navCollapsed } = useSelector((state: any) => state.common);
   const dispatch = useDispatch();
-
-  console.log(width);
 
   const languageMenu = () => (
     <CustomScrollbars className="kd-popover-lang-scroll">
