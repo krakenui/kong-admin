@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Observable } from 'rxjs';
 
-const useApi = (doFetch$: () => Observable<any>, doCompleted: () => void = () => {}) => {
-  const [data, setData] = useState();
+export default function useApi<T>(
+  doFetch$: () => Observable<T>,
+  doCompleted: () => void = () => {}
+): [T | undefined, any] {
+  const [data, setData] = useState<T>();
   const [error, setError] = useState();
 
   useEffect(() => {
@@ -16,6 +19,4 @@ const useApi = (doFetch$: () => Observable<any>, doCompleted: () => void = () =>
   }, []);
 
   return [data, error];
-};
-
-export default useApi;
+}

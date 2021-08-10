@@ -8,7 +8,7 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="home kd-page">
-      <p>Hello!!!</p>
+      <p>Home!!!</p>
     </div>
   );
 };
