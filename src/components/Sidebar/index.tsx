@@ -63,7 +63,7 @@ const Sidebar = () => {
     >
       {navStyle === NAV_STYLE_DRAWER || width < TAB_SIZE ? (
         <Drawer
-          className={`base-drawer-sidebar`}
+          className={`base-drawer-sidebar base-drawer-sidebar-dark`}
           placement="left"
           closable={false}
           visible={navCollapsed}
