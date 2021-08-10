@@ -1,4 +1,5 @@
 import { Avatar, Popover } from 'antd';
+import './index.less';
 import React from 'react';
 
 const UserProfile = () => {
@@ -13,11 +14,12 @@ const UserProfile = () => {
   return (
     <div className="kd-flex-row kd-align-items-center kd-mb-4 kd-avatar-row">
       <Popover placement="bottomRight" content={userMenuOptions} trigger="click">
-        <Avatar src="https://via.placeholder.com/150x150" className="kd-size-40 kd-pointer kd-mr-3" alt="" />
-        <span className="kd-avatar-name">
-          Rob Farnandies
-          <i className="icon icon-chevron-down kd-fs-xxs kd-ml-2" />
-        </span>
+        <Avatar
+          src="https://via.placeholder.com/150x150"
+          className="kd-size-40 kd-pointer kd-mr-2"
+          alt=""
+        />
+        <span className="kd-avatar-name">Nikola Tesla</span>
       </Popover>
     </div>
   );
