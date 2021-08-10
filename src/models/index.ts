@@ -1,2 +1,2 @@
-export * from './Product';
+export * from './Post';
 export * from './Pagination';

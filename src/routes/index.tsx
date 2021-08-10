@@ -4,7 +4,7 @@ import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 const HomePage = asyncComponent(() => import('pages/Home'));
 const SamplePage = asyncComponent(() => import('pages/Sample'));
-const ProductListPage = asyncComponent(() => import('pages/Products'));
+const PostsListPage = asyncComponent(() => import('pages/Posts'));
 
 const AppRoutes: React.FC<any> = () => {
   const match = useRouteMatch();
@@ -14,7 +14,7 @@ const AppRoutes: React.FC<any> = () => {
       <Switch>
         <Route path={match.url + '/'} component={HomePage} />
         <Route path={match.url + 'sample'} component={SamplePage} />
-        <Route path={match.url + 'products'} component={ProductListPage} />
+        <Route path={match.url + 'products'} component={PostsListPage} />
       </Switch>
     </div>
   );

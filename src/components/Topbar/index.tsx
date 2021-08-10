@@ -17,7 +17,7 @@ import {
   NAV_STYLE_MINI_SIDEBAR,
   TAB_SIZE,
 } from 'store/ActionTypes';
-import { toggleCollapsedSideNav } from 'store/actions';
+import { switchLanguage, toggleCollapsedSideNav } from 'store/actions';
 
 const { Header } = Layout;
 
@@ -30,9 +30,13 @@ const Topbar = () => {
     <CustomScrollbars className="kd-popover-lang-scroll">
       <ul className="kd-sub-popover">
         {languageData.map((language) => (
-          <li className="kd-media kd-pointer" key={JSON.stringify(language)}>
+          <li
+            className="kd-media kd-pointer"
+            key={JSON.stringify(language)}
+            onClick={(e) => dispatch(switchLanguage(language))}
+          >
             <i className={`flag-icon flag-icon-${language.icon}`} />
-            <span className="kd-language-text">{language.name}</span>
+            <span className="kd-language-text kd-ml-2">{language.name}</span>
           </li>
         ))}
       </ul>
@@ -62,7 +66,6 @@ const Topbar = () => {
             overlayClassName="kd-popover-horizontal"
             placement="bottomRight"
             content={languageMenu()}
-            trigger="click"
           >
             <span className="kd-pointer kd-flex-row kd-align-items-center">
               <i className={`flag-icon flag-icon-${locale.icon}`} />
