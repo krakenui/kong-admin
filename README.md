@@ -64,6 +64,7 @@ Before using that should be read [official documents](https://formatjs.io/docs/g
   ```
 
 - Using utils format functions:
+
   - FormattedDate
   - FormattedTime
   - FormattedNumber
@@ -74,3 +75,13 @@ Before using that should be read [official documents](https://formatjs.io/docs/g
   - FormattedDateTimeRange
     ...
     See more from [official public interface](https://github.com/formatjs/formatjs/blob/main/packages/react-intl/index.ts)
+
+  Ex:
+
+  ```javascript
+    import { useIntl } from 'react-intl';
+
+    const intl = useIntl();
+
+    intl.formatDate(new Date();
+  ```

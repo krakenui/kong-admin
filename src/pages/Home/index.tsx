@@ -4,7 +4,6 @@ import { useIntl } from 'react-intl';
 
 const HomePage: React.FC<any> = () => {
   const intl = useIntl();
-  console.log(intl.locale);
 
   useEffect(() => {
     console.log('load api...');
@@ -13,6 +12,7 @@ const HomePage: React.FC<any> = () => {
   return (
     <div className="home base-page">
       <p>Home!!!</p>
+      <p>{intl.formatDate(new Date())}</p>
     </div>
   );
 };
