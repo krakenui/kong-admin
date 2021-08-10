@@ -1,4 +1,9 @@
-import { DashboardOutlined, SkinOutlined, SnippetsOutlined } from '@ant-design/icons';
+import {
+  DashboardOutlined,
+  SettingOutlined,
+  SkinOutlined,
+  SnippetsOutlined,
+} from '@ant-design/icons';
 import { Menu } from 'antd';
 import CustomScrollbars from 'components/CustomScrollbar';
 import IntlMessages from 'components/IntlMessages';
@@ -18,12 +23,17 @@ const SidebarContent: React.FC = () => {
   return (
     <>
       <SidebarLogo />
-      <div className="kd-sidebar-content">
-        <div className={`kd-sidebar-notifications`}>
+      <div className="base-sidebar-content">
+        <div className={`base-sidebar-notifications`}>
           <UserProfile />
         </div>
-        <CustomScrollbars className="kd-layout-sider-scrollbar">
-          <Menu defaultOpenKeys={[defaultOpenKeys]} selectedKeys={[selectedKeys]} mode="inline">
+        <CustomScrollbars className="base-layout-sider-scrollbar">
+          <Menu
+            defaultOpenKeys={[defaultOpenKeys]}
+            selectedKeys={[selectedKeys]}
+            theme="dark"
+            mode="inline"
+          >
             <Menu.Item key="">
               <Link to="/">
                 <DashboardOutlined />
@@ -50,6 +60,17 @@ const SidebarContent: React.FC = () => {
             </Menu.Item>
           </Menu>
         </CustomScrollbars>
+
+        <Menu theme="dark" mode="inline" className="base-bottom-menu">
+          <Menu.Item key="settings">
+            <Link to="/settings">
+              <SettingOutlined />
+              <span>
+                <IntlMessages id="sidebar.settingPage" />
+              </span>
+            </Link>
+          </Menu.Item>
+        </Menu>
       </div>
     </>
   );

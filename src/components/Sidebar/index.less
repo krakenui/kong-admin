@@ -1,10 +1,32 @@
-.kd-site-logo {
+.base-site-logo {
   img {
     height: 40px;
   }
 }
-.kd-layout-sider-header {
-  .kd-linebar {
+.base-layout-sider-header {
+  .base-linebar {
     top: unset !important;
+    left: 32px !important;
   }
 }
+
+.base-sidebar-content {
+  .ant-menu-item {
+    span {
+      a {
+        padding: 10px 0;
+      }
+    }
+
+    &.ant-menu-item-selected {
+      span {
+        a {
+          span {
+            color: inherit;
+          }
+        }
+      }
+    }
+  }
+}
+

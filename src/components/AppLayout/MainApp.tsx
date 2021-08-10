@@ -10,14 +10,14 @@ const { Content, Footer } = Layout;
 
 const MainApp = () => {
   return (
-    <Layout className="kd-app-layout">
+    <Layout className="base-app-layout">
       <Sidebar />
       <Layout>
         <Topbar />
-        <Content className={`kd-layout-content kd-container-wrap`}>
+        <Content className={`base-layout-content base-container-wrap`}>
           <AppRoutes />
           <Footer>
-            <div className="kd-layout-footer-content">Copyright Company Name © 2018</div>
+            <div className="base-layout-footer-content">Copyright Company Name © 2018</div>
           </Footer>
         </Content>
       </Layout>

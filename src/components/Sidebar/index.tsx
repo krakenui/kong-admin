@@ -32,27 +32,27 @@ const Sidebar = () => {
 
   const drawerStyle = classNames(
     {
-      'kd-collapsed-sidebar':
+      'base-collapsed-sidebar':
         (navStyle === NAV_STYLE_FIXED ||
           navStyle === NAV_STYLE_MINI_SIDEBAR ||
           navStyle === NAV_STYLE_NO_HEADER_EXPANDED_SIDEBAR) &&
         width < TAB_SIZE,
     },
     {
-      'kd-mini-sidebar':
+      'base-mini-sidebar':
         navStyle === NAV_STYLE_MINI_SIDEBAR || navStyle === NAV_STYLE_NO_HEADER_MINI_SIDEBAR,
     },
     {
-      'kd-mini-custom-sidebar': navStyle === NAV_STYLE_NO_HEADER_MINI_SIDEBAR,
+      'base-mini-custom-sidebar': navStyle === NAV_STYLE_NO_HEADER_MINI_SIDEBAR,
     },
     {
-      'kd-custom-sidebar': navStyle === NAV_STYLE_NO_HEADER_EXPANDED_SIDEBAR,
+      'base-custom-sidebar': navStyle === NAV_STYLE_NO_HEADER_EXPANDED_SIDEBAR,
     }
   );
 
   return (
     <Sider
-      className={`kd-app-sidebar ${drawerStyle}`}
+      className={`base-app-sidebar ${drawerStyle} base-layout-sider-dark`}
       trigger={null}
       collapsed={
         width < TAB_SIZE
@@ -63,7 +63,7 @@ const Sidebar = () => {
     >
       {navStyle === NAV_STYLE_DRAWER || width < TAB_SIZE ? (
         <Drawer
-          className={`kd-drawer-sidebar`}
+          className={`base-drawer-sidebar`}
           placement="left"
           closable={false}
           visible={navCollapsed}

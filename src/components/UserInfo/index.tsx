@@ -6,15 +6,15 @@ const UserInfo = () => {
   const dispatch = useDispatch();
 
   const userMenuOptions = (
-    <ul className="kd-user-popover">
+    <ul className="base-user-popover">
       <li>My Account</li>
       <li>Connections</li>
     </ul>
   );
 
   return (
-    <Popover overlayClassName="kd-popover-horizantal" placement="bottomRight" content={userMenuOptions} trigger="click">
-      <Avatar src={'https://via.placeholder.com/150x150'} className="kd-avatar kd-pointer" alt="" />
+    <Popover overlayClassName="base-popover-horizantal" placement="bottomRight" content={userMenuOptions} trigger="click">
+      <Avatar src={'https://via.placeholder.com/150x150'} className="base-avatar base-pointer" alt="" />
     </Popover>
   );
 };

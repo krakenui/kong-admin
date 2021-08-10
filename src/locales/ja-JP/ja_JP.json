@@ -1,7 +1,8 @@
 {
-  "app.slogan": "新しいバージョンは12月25日にリリースされます。 乞うご期待！",
+  "app.slogan": "KongdReactJS管理ダッシュボードテンプレート。 楽しんでください！",
 
   "sidebar.samplePage": "Sample page",
-  "sidebar.productListPage": "Products",
-  "sidebar.dashboardPage": "Dashboard"
+  "sidebar.productListPage": "製品",
+  "sidebar.dashboardPage": "Dashboard",
+  "sidebar.settingPage": "設定"
 }

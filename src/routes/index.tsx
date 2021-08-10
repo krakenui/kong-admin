@@ -10,7 +10,7 @@ const AppRoutes: React.FC<any> = () => {
   const match = useRouteMatch();
 
   return (
-    <div className="kd-main-content-wrapper">
+    <div className="base-main-content-wrapper">
       <Switch>
         <Route path={match.url + '/'} component={HomePage} />
         <Route path={match.url + 'sample'} component={SamplePage} />

@@ -44,7 +44,7 @@ const PostListPage: React.FC = () => {
   );
 
   return (
-    <div className="products kd-page">
+    <div className="products base-page">
       <Table columns={columns} dataSource={data} rowKey="id"></Table>
     </div>
   );

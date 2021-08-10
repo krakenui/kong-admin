@@ -26,9 +26,9 @@ const SidebarLogo = () => {
   };
 
   return (
-    <div className="kd-layout-sider-header">
+    <div className="base-layout-sider-header">
       {navStyle === NAV_STYLE_FIXED || navStyle === NAV_STYLE_MINI_SIDEBAR ? (
-        <div className="kd-linebar">
+        <div className="base-linebar">
           {navStyle === NAV_STYLE_MINI_SIDEBAR ? (
             <MenuUnfoldOutlined onClick={toggleCollapseSideNav$} />
           ) : (
@@ -37,7 +37,7 @@ const SidebarLogo = () => {
         </div>
       ) : null}
 
-      <Link to="/" className="kd-site-logo">
+      <Link to="/" className="base-site-logo">
         <img alt="" src={wlogo} />
       </Link>
     </div>

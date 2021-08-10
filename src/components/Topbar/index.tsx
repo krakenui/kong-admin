@@ -27,16 +27,16 @@ const Topbar = () => {
   const dispatch = useDispatch();
 
   const languageMenu = () => (
-    <CustomScrollbars className="kd-popover-lang-scroll">
-      <ul className="kd-sub-popover">
+    <CustomScrollbars className="base-popover-lang-scroll">
+      <ul className="base-sub-popover">
         {languageData.map((language) => (
           <li
-            className="kd-media kd-pointer"
+            className="base-media base-pointer"
             key={JSON.stringify(language)}
             onClick={(e) => dispatch(switchLanguage(language))}
           >
             <i className={`flag-icon flag-icon-${language.icon}`} />
-            <span className="kd-language-text kd-ml-2">{language.name}</span>
+            <span className="base-language-text base-ml-2">{language.name}</span>
           </li>
         ))}
       </ul>
@@ -44,11 +44,11 @@ const Topbar = () => {
   );
 
   return (
-    <Header className="kd-default-header">
+    <Header className="base-default-header">
       {navStyle === NAV_STYLE_DRAWER ||
       ((navStyle === NAV_STYLE_FIXED || navStyle === NAV_STYLE_MINI_SIDEBAR) &&
         width < TAB_SIZE) ? (
-        <div className="kd-linebar kd-mr-3">
+        <div className="base-linebar base-mr-3">
           <MenuOutlined
             onClick={() => {
               dispatch(toggleCollapsedSideNav(!navCollapsed));
@@ -56,28 +56,28 @@ const Topbar = () => {
           />
         </div>
       ) : null}
-      <Link to="/" className="kd-d-block kd-d-lg-none kd-pointer">
-        <img alt="" className="kd-sm-logo" src={wlogo} />
+      <Link to="/" className="base-d-block base-d-lg-none base-pointer">
+        <img alt="" className="base-sm-logo" src={wlogo} />
       </Link>
 
-      <ul className="kd-header-notifications kd-ml-auto">
-        <li className="kd-language">
+      <ul className="base-header-notifications base-ml-auto">
+        <li className="base-language">
           <Popover
-            overlayClassName="kd-popover-horizontal"
+            overlayClassName="base-popover-horizontal"
             placement="bottomRight"
             content={languageMenu()}
           >
-            <span className="kd-pointer kd-flex-row kd-align-items-center">
+            <span className="base-pointer base-flex-row base-align-items-center">
               <i className={`flag-icon flag-icon-${locale.icon}`} />
-              <span className="kd-pl-2 kd-language-name">{locale.name}</span>
-              <i className="icon icon-chevron-down kd-pl-2" />
+              <span className="base-pl-2 base-language-name">{locale.name}</span>
+              <i className="icon icon-chevron-down base-pl-2" />
             </span>
           </Popover>
         </li>
 
         {width < TAB_SIZE && (
           <Auxiliary>
-            <li className="kd-user-nav">
+            <li className="base-user-nav">
               <UserInfo />
             </li>
           </Auxiliary>

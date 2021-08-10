@@ -7,7 +7,7 @@ const HomePage: React.FC = () => {
   }, []);
 
   return (
-    <div className="home kd-page">
+    <div className="home base-page">
       <p>Home!!!</p>
     </div>
   );

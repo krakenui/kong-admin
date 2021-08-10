@@ -1,7 +1,8 @@
 {
-  "app.slogan": "A new version will be released on December 25th. Stay tuned!",
+  "app.slogan": "Kongd ReactJS admin dashboard templates. Hope you fun!",
 
   "sidebar.samplePage": "Sample page",
   "sidebar.productListPage": "Products",
-  "sidebar.dashboardPage": "Dashboard"
+  "sidebar.dashboardPage": "Dashboard",
+  "sidebar.settingPage": "Settings"
 }

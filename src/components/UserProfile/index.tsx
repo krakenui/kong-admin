@@ -1,10 +1,11 @@
 import { Avatar, Popover } from 'antd';
+import { DownOutlined } from '@ant-design/icons';
 import './index.less';
 import React from 'react';
 
 const UserProfile = () => {
   const userMenuOptions = (
-    <ul className="kd-user-popover">
+    <ul className="base-user-popover">
       <li>My Account</li>
       <li>Connections</li>
       <li>Logout</li>
@@ -12,14 +13,16 @@ const UserProfile = () => {
   );
 
   return (
-    <div className="kd-flex-row kd-align-items-center kd-mb-4 kd-avatar-row">
+    <div className="base-flex-row base-align-items-center base-mb-4 base-avatar-row">
       <Popover placement="bottomRight" content={userMenuOptions} trigger="click">
         <Avatar
           src="https://via.placeholder.com/150x150"
-          className="kd-size-40 kd-pointer kd-mr-2"
+          className="base-size-40 base-pointer base-mr-2"
           alt=""
         />
-        <span className="kd-avatar-name">Nikola Tesla</span>
+        <span className="base-avatar-name">
+          Nikola Tesla <DownOutlined className="base-ml-1" />
+        </span>
       </Popover>
     </div>
   );
