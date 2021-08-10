@@ -1,5 +1,4 @@
 import './app.less';
-import 'assets/styles/default.css';
 import 'assets/styles/global/index.less';
 import 'assets/styles/kong-react-admin.less';
 
