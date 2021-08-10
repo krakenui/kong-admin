@@ -61,7 +61,7 @@ const SidebarContent: React.FC = () => {
           </Menu>
         </CustomScrollbars>
 
-        <Menu theme="dark" mode="inline" className="base-bottom-menu">
+        <Menu theme="dark" mode="inline" className="bottom-menu">
           <Menu.Item key="settings">
             <Link to="/settings">
               <SettingOutlined />
