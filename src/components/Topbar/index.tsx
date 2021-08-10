@@ -1,15 +1,23 @@
 import 'flag-icon-css/less/flag-icon.less';
+import './index.less';
 
+import { MenuOutlined } from '@ant-design/icons';
 import { Layout, Popover } from 'antd';
 import wlogo from 'assets/images/w-logo.png';
 import Auxiliary from 'components/Auxiliary';
+import CustomScrollbars from 'components/CustomScrollbar';
 import UserInfo from 'components/UserInfo';
 import { languageData } from 'locales';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { NAV_STYLE_DRAWER, NAV_STYLE_FIXED, NAV_STYLE_MINI_SIDEBAR, TAB_SIZE } from 'store/ActionTypes';
-import CustomScrollbars from 'components/CustomScrollbar';
+import {
+  NAV_STYLE_DRAWER,
+  NAV_STYLE_FIXED,
+  NAV_STYLE_MINI_SIDEBAR,
+  TAB_SIZE,
+} from 'store/ActionTypes';
+import { toggleCollapsedSideNav } from 'store/actions';
 
 const { Header } = Layout;
 
@@ -34,13 +42,18 @@ const Topbar = () => {
   return (
     <Header className="kd-default-header">
       {navStyle === NAV_STYLE_DRAWER ||
-      ((navStyle === NAV_STYLE_FIXED || navStyle === NAV_STYLE_MINI_SIDEBAR) && width < TAB_SIZE) ? (
+      ((navStyle === NAV_STYLE_FIXED || navStyle === NAV_STYLE_MINI_SIDEBAR) &&
+        width < TAB_SIZE) ? (
         <div className="kd-linebar kd-mr-3">
-          <i className="kd-icon-btn icon icon-menu" />
+          <MenuOutlined
+            onClick={() => {
+              dispatch(toggleCollapsedSideNav(!navCollapsed));
+            }}
+          />
         </div>
       ) : null}
       <Link to="/" className="kd-d-block kd-d-lg-none kd-pointer">
-        <img alt="" src={wlogo} />
+        <img alt="" className="kd-sm-logo" src={wlogo} />
       </Link>
 
       <ul className="kd-header-notifications kd-ml-auto">

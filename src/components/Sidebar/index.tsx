@@ -4,7 +4,7 @@ import { Drawer, Layout } from 'antd';
 import classNames from 'classnames';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateWindowWidth } from 'store/actions';
+import { toggleCollapsedSideNav, updateWindowWidth } from 'store/actions';
 import {
   NAV_STYLE_DRAWER,
   NAV_STYLE_FIXED,
@@ -39,7 +39,8 @@ const Sidebar = () => {
         width < TAB_SIZE,
     },
     {
-      'kd-mini-sidebar': navStyle === NAV_STYLE_MINI_SIDEBAR || navStyle === NAV_STYLE_NO_HEADER_MINI_SIDEBAR,
+      'kd-mini-sidebar':
+        navStyle === NAV_STYLE_MINI_SIDEBAR || navStyle === NAV_STYLE_NO_HEADER_MINI_SIDEBAR,
     },
     {
       'kd-mini-custom-sidebar': navStyle === NAV_STYLE_NO_HEADER_MINI_SIDEBAR,
@@ -54,12 +55,20 @@ const Sidebar = () => {
       className={`kd-app-sidebar ${drawerStyle}`}
       trigger={null}
       collapsed={
-        width < TAB_SIZE ? false : navStyle === NAV_STYLE_MINI_SIDEBAR || navStyle === NAV_STYLE_NO_HEADER_MINI_SIDEBAR
+        width < TAB_SIZE
+          ? false
+          : navStyle === NAV_STYLE_MINI_SIDEBAR || navStyle === NAV_STYLE_NO_HEADER_MINI_SIDEBAR
       }
       collapsible
     >
       {navStyle === NAV_STYLE_DRAWER || width < TAB_SIZE ? (
-        <Drawer className={`kd-drawer-sidebar`} placement="left" closable={false} visible={navCollapsed}>
+        <Drawer
+          className={`kd-drawer-sidebar`}
+          placement="left"
+          closable={false}
+          visible={navCollapsed}
+          onClose={() => dispatch(toggleCollapsedSideNav(!navCollapsed))}
+        >
           <SidebarContent />
         </Drawer>
       ) : (
