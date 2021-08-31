@@ -86,6 +86,12 @@ Key goals:
 
 ## Screenshots
 
+![5.png](docs/screenshots/5.png)
+
+![6.png](docs/screenshots/6.png)
+
+![7.png](docs/screenshots/7.png)
+
 ![1.png](docs/screenshots/1.png)
 
 ![2.png](docs/screenshots/2.png)
