@@ -3,9 +3,9 @@ import classNames from 'classnames';
 import React from 'react';
 
 const CircularProgress: React.FC<any> = ({ className }) => {
-  const loaderCls = classNames('loader', className);
+    const loaderCls = classNames('loader', className);
 
-  return <div className={loaderCls}>...</div>;
+    return <div className={loaderCls}>...</div>;
 };
 
 export default CircularProgress;

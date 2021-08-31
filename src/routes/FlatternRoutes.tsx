@@ -8,27 +8,29 @@ const SignInPage = asyncComponent(() => import('pages/Auth/SignIn'));
 const AccessDeniedPage = asyncComponent(() => import('pages/Auth/403'));
 
 const FlatternRoutes: React.FC<any> = () => (
-  <div className="kdr-main-content-wrapper">
-    <Switch>
-      <AsyncRoute
-        path="/login"
-        protect={false}
-        exact
-        asyncComponent={SignInPage}
-        title={useIntlMessage('page.meta.title.auth.login')}
-        description={useIntlMessage('page.meta.description.auth.login')}
-      />
+    <div className="kdr-main-content-wrapper">
+        <Switch>
+            <AsyncRoute
+                path="/login"
+                protect={false}
+                exact
+                asyncComponent={SignInPage}
+                title={useIntlMessage('page.meta.title.auth.login')}
+                description={useIntlMessage('page.meta.description.auth.login')}
+            />
 
-      <AsyncRoute
-        path="/island"
-        protect={false}
-        exact
-        asyncComponent={AccessDeniedPage}
-        title={useIntlMessage('page.meta.title.auth.island')}
-        description={useIntlMessage('page.meta.description.auth.island')}
-      />
-    </Switch>
-  </div>
+            <AsyncRoute
+                path="/island"
+                protect={false}
+                exact
+                asyncComponent={AccessDeniedPage}
+                title={useIntlMessage('page.meta.title.auth.island')}
+                description={useIntlMessage(
+                    'page.meta.description.auth.island'
+                )}
+            />
+        </Switch>
+    </div>
 );
 
 export default FlatternRoutes;

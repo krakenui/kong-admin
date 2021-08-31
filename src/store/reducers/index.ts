@@ -5,10 +5,10 @@ import Settings from './Settings';
 import Common from './Common';
 
 const createRootReducer = (history: any) =>
-  combineReducers({
-    router: connectRouter(history),
-    settings: Settings,
-    common: Common,
-  });
+    combineReducers({
+        router: connectRouter(history),
+        settings: Settings,
+        common: Common,
+    });
 
 export default createRootReducer;

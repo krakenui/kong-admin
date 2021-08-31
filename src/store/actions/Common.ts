@@ -1,4 +1,8 @@
-import { NAV_STYLE, TOGGLE_COLLAPSED_NAV, WINDOW_WIDTH } from 'store/ActionTypes';
+import {
+    NAV_STYLE,
+    TOGGLE_COLLAPSED_NAV,
+    WINDOW_WIDTH,
+} from 'store/ActionTypes';
 
 export function toggleNavStyleChange(navStyle: any) {
     return (dispatch: any) => {

@@ -11,20 +11,20 @@ export const history = createBrowserHistory();
 const middlewares = [thunk, RouteChangedHandler];
 
 export default function configureStore(preloadedState: any) {
-  const store = createStore(
-    createRootReducer(history), // root reducer with router state
-    preloadedState,
-    compose(
-      applyMiddleware(
-        routerMiddleware(history), // for dispatching history actions
-        ...middlewares
-      )
-    )
-  );
+    const store = createStore(
+        createRootReducer(history), // root reducer with router state
+        preloadedState,
+        compose(
+            applyMiddleware(
+                routerMiddleware(history), // for dispatching history actions
+                ...middlewares
+            )
+        )
+    );
 
-  // initial immutable store
-  // refs durable store
-  initRootStore(store);
+    // initial immutable store
+    // refs durable store
+    initRootStore(store);
 
-  return store;
+    return store;
 }
