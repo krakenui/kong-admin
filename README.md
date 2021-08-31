@@ -17,7 +17,7 @@ Key goals:
 -   [Customize configurations](#customize-configurations)
 -   [Production bundle](#production-bundle)
 -   [Multiple languages](docs/multiple-languages.md)
--   [Base stylesheet styles](docs/base-stylesheet.md)
+-   [Base stylesheet styles](docs/base-stylesheets.md)
 -   [Structure & layout](docs/structure-layout.md)
 
 ## Quick start
