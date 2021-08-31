@@ -9,10 +9,10 @@
   },
   "scripts": {
     "clean": "rimraf ./build",
-    "analyze": "yarn clean && yarn build -- --stats && webpack-bundle-analyzer ./build/bundle-stats.json",
+    "analyze": "yarn clean && yarn build -- --stats && webpack-bundle-analyzer \"./build/bundle-stats.json\"",
     "start": "react-app-rewired start",
     "dev": "concurrently \"yarn mock\" \"yarn start\"",
-    "mock": "json-server --watch mock/db.json --port 5000 --routes mock/routes.json -m ./node_modules/json-server-auth",
+    "mock": "json-server --watch \"mock/db.json\" --port 5000 --routes \"mock/routes.json\" -m ./node_modules/json-server-auth",
     "build": "react-app-rewired build",
     "serve": "serve -s build -l 3001",
     "prettier": "prettier src/**/*.{ts,tsx}",
