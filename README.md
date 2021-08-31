@@ -1,84 +1,84 @@
-# Gurubo React Dashboard
+# Kong React Admin Dashboard
 
 Key goals:
 
-- ReactJs + Typescript
-- Ant design components + Ant design icons
-- Redux for React + Redux thunk
-- RxJs
-- Axios
-- React hook + Rxjs for React hook
-- LESS style with `lessc`
+-   ReactJs + Typescript
+-   Ant design components + Ant design icons
+-   Redux for React + Redux thunk
+-   RxJs
+-   Axios
+-   React hook + Rxjs for React hook
+-   LESS style with `lessc`
 
 ### Table of contents
 
-- [Quick start](#quick-start)
-- [Quick develop without Backend APIs](docs/mock-api.md)
-- [Customize configurations](#customize-configurations)
-- [Production bundle](#production-bundle)
-- [Multiple languages](docs/multiple-languages.md)
-- [Base stylesheet styles](docs/base-stylesheet.md)
-- [Structure & layout](docs/structure-layout.md)
+-   [Quick start](#quick-start)
+-   [Quick develop without Backend APIs](docs/mock-api.md)
+-   [Customize configurations](#customize-configurations)
+-   [Production bundle](#production-bundle)
+-   [Multiple languages](docs/multiple-languages.md)
+-   [Base stylesheet styles](docs/base-stylesheet.md)
+-   [Structure & layout](docs/structure-layout.md)
 
 ## Quick start
 
-- Prerequisite:
+-   Prerequisite:
 
-  - NodeJs 10 or above
-  - Yarn latest
+    -   NodeJs 10 or above
+    -   Yarn latest
 
-- Install depedencies
-
-  ```bash
-    yarn
-  ```
-
-- Start dev server:
-
-  - Using mock json server:
+-   Install depedencies
 
     ```bash
-        yarn dev
+      yarn
     ```
 
-  - Or without mock server:
+-   Start dev server:
 
-    ```bash
-        yarn start
-    ```
+    -   Using mock json server:
+
+        ```bash
+            yarn dev
+        ```
+
+    -   Or without mock server:
+
+        ```bash
+            yarn start
+        ```
 
 ## Customize configurations
 
-- Enviroment matching with your stage, refer [official documents](https://create-react-app.dev/docs/adding-custom-environment-variables/).
+-   Enviroment matching with your stage, refer [official documents](https://create-react-app.dev/docs/adding-custom-environment-variables/).
 
-- Development proxy, default API proxy pass though for [http://localhost:5000](http://localhost:5000). Update the development proxy at `package.json`. See more details from [official documents](https://create-react-app.dev/docs/proxying-api-requests-in-development).
+-   Development proxy, default API proxy pass though for [http://localhost:5000](http://localhost:5000). Update the development proxy at `package.json`. See more details from [official documents](https://create-react-app.dev/docs/proxying-api-requests-in-development).
 
-- Quick implement Front-end with mock json server. Update to `mock/db.json`. See more details from [official documents](https://github.com/typicode/json-server#getting-started).
+-   Quick implement Front-end with mock json server. Update to `mock/db.json`. See more details from [official documents](https://github.com/typicode/json-server#getting-started).
 
 ## Production bundle
 
-- Clean depedencies
+-   Clean depedencies
 
-  ```bash
-    yarn
-  ```
+    ```bash
+      yarn
+    ```
 
-- Update production environments at
+-   Update production environments at
 
-  ```bash
-    .env.production
-  ```
+    ```bash
+      .env.production
+    ```
 
-- Run linters to validate source code
+-   Run linters to validate source code
 
-  ```bash
-    yarn lint
-  ```
+    ```bash
+      yarn lint
+    ```
 
-- Run build with production mode
+-   Run build with production mode
 
-  ```bash
-    yarn build
-  ```
+    ```bash
+      yarn build
+    ```
 
-- Production bundle resources at `build` directory.
+-   Production bundle resources at `build` directory.
