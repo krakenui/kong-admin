@@ -99,3 +99,5 @@ Key goals:
 ![3.png](docs/screenshots/3.png)
 
 ![4.png](docs/screenshots/4.png)
+
+![9.png](docs/screenshots/9.png)
