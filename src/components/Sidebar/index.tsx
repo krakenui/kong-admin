@@ -50,25 +50,24 @@ const Sidebar = () => {
 
     return (
         <Sider
-            className={`kdr-app-sidebar ${drawerStyle} kdr-layout-sider-dark`}
-            trigger={null}
-            collapsed={
+          className={`kdr-app-sidebar ${drawerStyle} kdr-layout-sider-dark`}
+          trigger={null}
+          collapsed={
                 width < TAB_SIZE
                     ? false
                     : navStyle === NAV_STYLE_MINI_SIDEBAR ||
                       navStyle === NAV_STYLE_NO_HEADER_MINI_SIDEBAR
             }
-            collapsible
+          collapsible
         >
             {navStyle === NAV_STYLE_DRAWER || width < TAB_SIZE ? (
                 <Drawer
-                    className="kdr-drawer-sidebar kdr-drawer-sidebar-dark"
-                    placement="left"
-                    closable={false}
-                    visible={navCollapsed}
-                    onClose={() =>
-                        dispatch(toggleCollapsedSideNav(!navCollapsed))
-                    }
+                  className="kdr-drawer-sidebar kdr-drawer-sidebar-dark"
+                  placement="left"
+                  closable={false}
+                  visible={navCollapsed}
+                  onClose={() =>
+                        dispatch(toggleCollapsedSideNav(!navCollapsed))}
                 >
                     <SidebarContent />
                 </Drawer>

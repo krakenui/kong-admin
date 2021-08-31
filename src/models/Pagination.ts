@@ -7,9 +7,13 @@ export interface IArgument {
 }
 
 export class Pagination<T> {
-    page: number = 0;
-    pageSize: number = 10;
+    page = 0;
+
+    pageSize = 10;
+
     query: IQueryItem | undefined;
-    itemCount: number = 0;
+
+    itemCount = 0;
+
     items: T[] = [];
 }

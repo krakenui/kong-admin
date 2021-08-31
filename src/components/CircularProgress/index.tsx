@@ -1,4 +1,3 @@
-import loaderImg from 'assets/images/loader.svg';
 import classNames from 'classnames';
 import React from 'react';
 

@@ -1,4 +1,5 @@
 import { routerMiddleware } from 'connected-react-router';
+import { createBrowserHistory } from 'history';
 import { initRootStore } from 'octopus-immutable-store';
 import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
@@ -6,7 +7,6 @@ import thunk from 'redux-thunk';
 import RouteChangedHandler from './middlewares/RouteChangedHandler';
 import createRootReducer from './reducers';
 
-const createBrowserHistory = require('history').createBrowserHistory;
 export const history = createBrowserHistory();
 const middlewares = [thunk, RouteChangedHandler];
 

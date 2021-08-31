@@ -1,9 +1,8 @@
-import { PaginationProps, Table } from 'antd';
+import { Table } from 'antd';
 import { getAllPosts } from 'apis/Posts';
+import { notifyError } from 'components/Notification';
 import useApi from 'hooks/UseApi';
-import { Pagination, Post } from 'models';
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const columns = [
     {
@@ -25,30 +24,31 @@ const columns = [
 
 const PostListPage: React.FC = () => {
     const [loading, setLoading] = useState(false);
-    const [pagination, setPagination] = useState<PaginationProps>({
-        current: 0,
-        pageSize: 20,
-    });
-    const defaultPagination = new Pagination<Post>();
-    defaultPagination.page = 0;
-    defaultPagination.pageSize = 20;
-
     const [data, error] = useApi(
         () => {
             setLoading(true);
-            return getAllPosts(
-                pagination.current || 0,
-                pagination.pageSize || 20
-            );
+            return getAllPosts(0, 20);
         },
         () => {
             setLoading(false);
-        }
+        },
+        []
     );
+
+    useEffect(() => {
+        if (error != null) {
+            notifyError('Load all posts error.');
+        }
+    }, [error]);
 
     return (
         <div className="products base-page">
-            <Table columns={columns} dataSource={data} rowKey="id"></Table>
+            <Table
+                columns={columns}
+                dataSource={data}
+                loading={loading}
+                rowKey="id"
+            />
         </div>
     );
 };

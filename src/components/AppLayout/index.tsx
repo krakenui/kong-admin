@@ -19,14 +19,14 @@ const AppLayout: React.FC<any> = () => {
     return (
         <ConfigProvider locale={currentAppLocale.antd}>
             <IntlProvider
-                locale={currentAppLocale.locale}
-                messages={currentAppLocale.messages}
+              locale={currentAppLocale.locale}
+              messages={currentAppLocale.messages}
             >
                 <HelmetProvider>
                     <Switch>
                         <Route
-                            path={match.url + 'portal'}
-                            component={MainApp}
+                          path={match.url + 'portal'}
+                          component={MainApp}
                         />
                         <Route path={match.url} exact>
                             <Redirect to={match.url + 'portal'} />

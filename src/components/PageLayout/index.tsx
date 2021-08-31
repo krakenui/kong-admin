@@ -38,9 +38,9 @@ const PageLayout: React.FC<PageLayoutProps> = ({
                     {metaTags != null &&
                         metaTags.map((tag, idx) => (
                             <meta
-                                name={tag.name}
-                                content={tag.content}
-                                key={idx}
+                              name={tag.name}
+                              content={tag.content}
+                              key={idx}
                             />
                         ))}
                 </Helmet>

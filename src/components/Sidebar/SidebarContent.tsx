@@ -29,9 +29,9 @@ const SidebarContent: React.FC = () => {
             <ul className="kdr-sub-popover">
                 {languageData.map((language) => (
                     <li
-                        className="kdr-media kdr-pointer"
-                        key={JSON.stringify(language)}
-                        onClick={() => dispatch(switchLanguage(language))}
+                      className="kdr-media kdr-pointer"
+                      key={JSON.stringify(language)}
+                      onClick={() => dispatch(switchLanguage(language))}
                     >
                         <i className={`flag-icon flag-icon-${language.icon}`} />
                         <span className="kdr-language-text kdr-ml-2">
@@ -49,15 +49,15 @@ const SidebarContent: React.FC = () => {
             <div className="kdr-sidebar-content">
                 <CustomScrollbars className="kdr-layout-sider-scrollbar">
                     <Menu
-                        defaultOpenKeys={[defaultOpenKeys]}
-                        selectedKeys={[selectedKeys]}
-                        theme="dark"
-                        mode="inline"
+                      defaultOpenKeys={[defaultOpenKeys]}
+                      selectedKeys={[selectedKeys]}
+                      theme="dark"
+                      mode="inline"
                     >
                         <Menu.SubMenu
-                            key="posts"
-                            icon={<ContainerOutlined />}
-                            title={<IntlMessages id="sidebar.post.list" />}
+                          key="posts"
+                          icon={<ContainerOutlined />}
+                          title={<IntlMessages id="sidebar.post.list" />}
                         >
                             <Menu.Item key="/portal/posts">
                                 <Link to="/portal/posts">
@@ -68,9 +68,9 @@ const SidebarContent: React.FC = () => {
 
                         {isAdmin(user?.roles) && (
                             <Menu.SubMenu
-                                key="users"
-                                icon={<TeamOutlined />}
-                                title={<IntlMessages id="sidebar.user.list" />}
+                              key="users"
+                              icon={<TeamOutlined />}
+                              title={<IntlMessages id="sidebar.user.list" />}
                             >
                                 <Menu.Item key="/portal/users">
                                     <Link to="/portal/users">
@@ -85,13 +85,13 @@ const SidebarContent: React.FC = () => {
                 <Menu theme="dark" mode="inline" className="bottom-menu">
                     <Menu.Item key="langs">
                         <Popover
-                            overlayClassName="kdr-popover-horizontal"
-                            placement="bottomRight"
-                            content={languageMenu()}
+                          overlayClassName="kdr-popover-horizontal"
+                          placement="bottomRight"
+                          content={languageMenu()}
                         >
                             <span className="anticon kdr-pointer">
                                 <i
-                                    className={`flag-icon flag-icon-${locale.icon}`}
+                                  className={`flag-icon flag-icon-${locale.icon}`}
                                 />
                             </span>
 

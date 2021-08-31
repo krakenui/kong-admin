@@ -15,16 +15,12 @@ httpClient.interceptors.request.use(
 
         return req;
     },
-    (error) => {
-        return Promise.reject(error);
-    }
+    (error) => Promise.reject(error)
 );
 
 httpClient.interceptors.response.use(
     (response) => response.data,
-    (error) => {
-        return Promise.reject(error);
-    }
+    (error) => Promise.reject(error)
 );
 
 export default httpClient;

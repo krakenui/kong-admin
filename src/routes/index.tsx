@@ -21,12 +21,12 @@ const AppRoutes: React.FC<any> = () => {
                 {/* Staff */}
 
                 <AsyncRoute
-                    path={`${match.url}/posts`}
-                    protect
-                    roles={[UserRole.Staff, UserRole.Admin]}
-                    asyncComponent={PostListPage}
-                    title={useIntlMessage('page.meta.title.post.list')}
-                    description={useIntlMessage(
+                  path={`${match.url}/posts`}
+                  protect
+                  roles={[UserRole.Staff, UserRole.Admin]}
+                  asyncComponent={PostListPage}
+                  title={useIntlMessage('page.meta.title.post.list')}
+                  description={useIntlMessage(
                         'page.meta.description.post.list'
                     )}
                 />
@@ -34,12 +34,12 @@ const AppRoutes: React.FC<any> = () => {
                 {/* Admin */}
 
                 <AsyncRoute
-                    path={`${match.url}/users`}
-                    protect
-                    roles={[UserRole.Admin]}
-                    asyncComponent={UserListPage}
-                    title={useIntlMessage('page.meta.title.user.list')}
-                    description={useIntlMessage(
+                  path={`${match.url}/users`}
+                  protect
+                  roles={[UserRole.Admin]}
+                  asyncComponent={UserListPage}
+                  title={useIntlMessage('page.meta.title.user.list')}
+                  description={useIntlMessage(
                         'page.meta.description.user.list'
                     )}
                 />

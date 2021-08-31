@@ -42,8 +42,8 @@ const DynamicColumnSettings: React.FC<DynamicColumnSettingsProps> = ({
                 return {
                     label: (
                         <span
-                            className="kdr-text-warning kdr-text-capitalize"
-                            title={useIntlMessage(
+                          className="kdr-text-warning kdr-text-capitalize"
+                          title={useIntlMessage(
                                 'component.dynamictable.setting.column.defaultname'
                             )}
                         >
@@ -90,29 +90,29 @@ const DynamicColumnSettings: React.FC<DynamicColumnSettingsProps> = ({
     return (
         <div className="dyn-table-column-select">
             <Popover
-                ref={modalRef}
-                getPopupContainer={getPopupContainer}
-                placement="leftBottom"
-                title={useIntlMessage(
+              ref={modalRef}
+              getPopupContainer={getPopupContainer}
+              placement="leftBottom"
+              title={useIntlMessage(
                     'component.dynamictable.setting.column.title'
                 )}
-                trigger="click"
-                content={
+              trigger="click"
+              content={
                     <div className="selecting kdr-flex-column">
                         <CheckboxGroup
-                            className="kdr-flex-column"
-                            options={columnOptions}
-                            defaultValue={defaultSelectedColumns}
-                            onChange={onSelectedColumnChanged}
+                          className="kdr-flex-column"
+                          options={columnOptions}
+                          defaultValue={defaultSelectedColumns}
+                          onChange={onSelectedColumnChanged}
                         />
 
                         <hr />
 
                         <Button
-                            type="primary"
-                            size="small"
-                            onClick={onSubmit}
-                            disabled={applyDisable}
+                          type="primary"
+                          size="small"
+                          onClick={onSubmit}
+                          disabled={applyDisable}
                         >
                             <IntlMessages id="component.dynamictable.setting.column.submit" />
                         </Button>

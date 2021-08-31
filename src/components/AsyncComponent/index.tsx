@@ -3,9 +3,7 @@ import 'react-placeholder/lib/reactPlaceholder.css';
 
 import CircularProgress from 'components/CircularProgress';
 import Nprogress from 'nprogress';
-import React, { Component } from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import ReactPlaceholder from 'react-placeholder';
 import { from } from 'rxjs';
 
@@ -30,7 +28,7 @@ export default function asyncComponent(importComponent: any) {
         const renderComponent = () => {
             const { default: Component } = component;
 
-            return <Component {...props}></Component>;
+            return <Component {...props} />;
         };
 
         return (

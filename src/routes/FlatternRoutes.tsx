@@ -11,21 +11,21 @@ const FlatternRoutes: React.FC<any> = () => (
     <div className="kdr-main-content-wrapper">
         <Switch>
             <AsyncRoute
-                path="/login"
-                protect={false}
-                exact
-                asyncComponent={SignInPage}
-                title={useIntlMessage('page.meta.title.auth.login')}
-                description={useIntlMessage('page.meta.description.auth.login')}
+              path="/login"
+              protect={false}
+              exact
+              asyncComponent={SignInPage}
+              title={useIntlMessage('page.meta.title.auth.login')}
+              description={useIntlMessage('page.meta.description.auth.login')}
             />
 
             <AsyncRoute
-                path="/island"
-                protect={false}
-                exact
-                asyncComponent={AccessDeniedPage}
-                title={useIntlMessage('page.meta.title.auth.island')}
-                description={useIntlMessage(
+              path="/island"
+              protect={false}
+              exact
+              asyncComponent={AccessDeniedPage}
+              title={useIntlMessage('page.meta.title.auth.island')}
+              description={useIntlMessage(
                     'page.meta.description.auth.island'
                 )}
             />

@@ -14,10 +14,10 @@ const SuccessAlert: React.FC<SuccessAlertProps> = ({
     <Row justify="center" align="middle">
         <Col span={24}>
             <Result
-                status="success"
-                title={title}
-                subTitle={subTitle}
-                extra={children}
+              status="success"
+              title={title}
+              subTitle={subTitle}
+              extra={children}
             />
         </Col>
     </Row>

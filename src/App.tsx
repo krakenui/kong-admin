@@ -1,4 +1,3 @@
-import './app.less';
 import 'assets/styles/global/index.less';
 import 'assets/styles/kong-react-admin.less';
 
@@ -21,7 +20,7 @@ const App: React.FC = () => {
     return (
         <Provider store={store}>
             <ConnectedRouter history={history}>
-                <AppLayout></AppLayout>
+                <AppLayout />
             </ConnectedRouter>
         </Provider>
     );

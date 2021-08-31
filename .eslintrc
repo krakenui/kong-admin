@@ -58,6 +58,9 @@
       "react/jsx-wrap-multilines": "off",
       "function-paren-newline": "off",
       "react/destructuring-assignment": "off",
+      "react/require-default-props": "off",
+      "react/jsx-indent-props": "off",
+      "lines-between-class-members": "off",
       "linebreak-style": 0
     },
     "settings": {

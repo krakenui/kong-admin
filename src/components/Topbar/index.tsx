@@ -33,7 +33,7 @@ const Topbar = () => {
                 width < TAB_SIZE) ? (
                 <div className="kdr-linebar kdr-mr-3">
                     <MenuOutlined
-                        onClick={() => {
+                      onClick={() => {
                             dispatch(toggleCollapsedSideNav(!navCollapsed));
                         }}
                     />

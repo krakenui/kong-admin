@@ -1,13 +1,9 @@
 import {
     LAYOUT_TYPE,
     LAYOUT_TYPE_FULL,
-    NAV_STYLE,
-    NAV_STYLE_FIXED,
     SWITCH_LANGUAGE,
-    THEME_COLOR,
     THEME_TYPE,
     THEME_TYPE_SEMI_DARK,
-    WINDOW_WIDTH,
 } from '../ActionTypes';
 
 const initialSettings = {

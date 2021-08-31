@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 export interface Token {
     accessToken: string | null;
     uid: string | null;

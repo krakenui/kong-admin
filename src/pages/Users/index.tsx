@@ -63,12 +63,12 @@ const UserListPage: FC<any> = () => {
 
             <PageContent className="survey-list-page">
                 <DynamicTable
-                    primaryTitle={useIntlMessage('sidebar.user.list.active')}
-                    loading={loading}
-                    dataSource={posts}
-                    columns={columns}
-                    rowKey="id"
-                    scroll={{ x: 'max-content' }}
+                  primaryTitle={useIntlMessage('sidebar.user.list.active')}
+                  loading={loading}
+                  dataSource={posts}
+                  columns={columns}
+                  rowKey="id"
+                  scroll={{ x: 'max-content' }}
                 />
             </PageContent>
         </>

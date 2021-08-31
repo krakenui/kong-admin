@@ -7,6 +7,7 @@ import {
 
 const INIT_STATE = {
     navStyle: NAV_STYLE_FIXED,
+    /* eslint-disable-next-line */
     width: window.innerWidth,
     error: '',
     loading: false,

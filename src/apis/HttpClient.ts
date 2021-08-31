@@ -9,9 +9,7 @@ const httpClient = axios.create({
 
 httpClient.interceptors.response.use(
     (response) => response.data,
-    (error) => {
-        return Promise.reject(error);
-    }
+    (error) => Promise.reject(error)
 );
 
 export default httpClient;
