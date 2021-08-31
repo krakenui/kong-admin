@@ -1,5 +1,4 @@
 import enLang from './en-US';
-import viLang from './vi-VN';
 import jaLang from './ja-JP';
 
 export const languageData = [
@@ -8,12 +7,6 @@ export const languageData = [
         locale: 'en',
         name: 'English',
         icon: 'us',
-    },
-    {
-        languageId: 'vietnamese',
-        locale: 'vi',
-        name: 'Vietnamese',
-        icon: 'vn',
     },
     {
         languageId: 'japanese',
@@ -25,7 +18,6 @@ export const languageData = [
 
 const AppLocale: any = {
     en: enLang,
-    vi: viLang,
     ja: jaLang,
 };
 

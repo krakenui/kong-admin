@@ -604,15 +604,15 @@
   "users": [
     {
       "id": 1,
-      "name": "staff",
-      "email": "staff",
+      "name": "Monkey D.Luffy",
+      "email": "staff@email.com",
       "password": "$2a$10$qx45LE2VhsgdytaX/5e.7.kVJxQWwUZFLeVLB8iF3nU1HKLYuehL6",
       "roles": "staff"
     },
     {
       "id": 2,
-      "name": "admin",
-      "email": "admin",
+      "name": "Nico Robin",
+      "email": "admin@email.com",
       "password": "$2a$10$VLZCzE2NnJMU4LpV3dGjveSHgcWbhb2cmZ2mQHp6lUuksVbE/Lkxa",
       "roles": "admin"
     }

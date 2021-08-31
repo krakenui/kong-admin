@@ -63,25 +63,25 @@ const SignInPage: React.FC<any> = () => {
         <Spin spinning={loading}>
             <Row>
                 <Col
-                  xs={{ span: 22, offset: 1 }}
-                  md={{ span: 12, offset: 6 }}
-                  xl={{ span: 8, offset: 8 }}
+                    xs={{ span: 22, offset: 1 }}
+                    md={{ span: 12, offset: 6 }}
+                    xl={{ span: 8, offset: 8 }}
                 >
                     <div className="login-page kdr-mt-4 kdr-pt-4 kdr-flex-column kdr-align-items-center">
                         <h1>
                             <IntlMessages id="page.content.login.header" />
                         </h1>
                         <Form
-                          form={form}
-                          style={{ width: '100%' }}
-                          name="login-form"
-                          className="login-form"
-                          initialValues={{ remember: true }}
-                          onFinish={onFinish}
+                            form={form}
+                            style={{ width: '100%' }}
+                            name="login-form"
+                            className="login-form"
+                            initialValues={{ remember: true }}
+                            onFinish={onFinish}
                         >
                             <Form.Item
-                              name="email"
-                              rules={[
+                                name="email"
+                                rules={[
                                     {
                                         required: true,
                                         message: useIntlMessage(
@@ -91,17 +91,17 @@ const SignInPage: React.FC<any> = () => {
                                 ]}
                             >
                                 <Input
-                                  size="large"
-                                  prefix={<UserOutlined />}
-                                  placeholder={useIntlMessage(
+                                    size="large"
+                                    prefix={<UserOutlined />}
+                                    placeholder={useIntlMessage(
                                         'page.content.login.form.email.placeholder'
                                     )}
                                 />
                             </Form.Item>
 
                             <Form.Item
-                              name="password"
-                              rules={[
+                                name="password"
+                                rules={[
                                     {
                                         required: true,
                                         message: useIntlMessage(
@@ -111,10 +111,10 @@ const SignInPage: React.FC<any> = () => {
                                 ]}
                             >
                                 <Input
-                                  size="large"
-                                  prefix={<LockOutlined />}
-                                  type="password"
-                                  placeholder={useIntlMessage(
+                                    size="large"
+                                    prefix={<LockOutlined />}
+                                    type="password"
+                                    placeholder={useIntlMessage(
                                         'page.content.login.form.password.placeholder'
                                     )}
                                 />
@@ -122,38 +122,38 @@ const SignInPage: React.FC<any> = () => {
 
                             <Form.Item>
                                 <Form.Item
-                                  className="hidden"
-                                  name="remember"
-                                  valuePropName="checked"
-                                  noStyle
+                                    className="hidden"
+                                    name="remember"
+                                    valuePropName="checked"
+                                    noStyle
                                 >
                                     <Checkbox>
                                         <IntlMessages id="page.content.login.form.remember" />
                                     </Checkbox>
                                 </Form.Item>
                                 <a
-                                  className="pull-right"
-                                  href="#/forgot-password"
+                                    className="pull-right"
+                                    href="#/forgot-password"
                                 >
                                     <IntlMessages id="page.content.login.form.forgotpassword" />
                                 </a>
                             </Form.Item>
                             <Form.Item>
                                 <Button
-                                  loading={inProgress}
-                                  block
-                                  type="primary"
-                                  htmlType="submit"
+                                    loading={inProgress}
+                                    block
+                                    type="primary"
+                                    htmlType="submit"
                                 >
                                     <IntlMessages id="page.content.login.form.submit" />
                                 </Button>
                             </Form.Item>
 
                             <p className="kdr-font-italic kdr-text-center">
-                                Demo Staff: staff / staff
+                                Demo Staff: staff@email.com / staff
                             </p>
                             <p className="kdr-font-italic kdr-text-center">
-                                Demo Admin: admin / admin
+                                Demo Admin: admin@email.com / admin
                             </p>
                         </Form>
                     </div>

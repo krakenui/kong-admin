@@ -61,7 +61,7 @@ const UserListPage: FC<any> = () => {
                 </Breadcrumb.Item>
             </Breadcrumb>
 
-            <PageContent className="survey-list-page">
+            <PageContent className="user-list-page">
                 <DynamicTable
                   primaryTitle={useIntlMessage('sidebar.user.list.active')}
                   loading={loading}

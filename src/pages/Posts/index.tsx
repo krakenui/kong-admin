@@ -1,7 +1,12 @@
-import { Table } from 'antd';
+import { HomeOutlined } from '@ant-design/icons';
+import { Breadcrumb } from 'antd';
 import { getAllPosts } from 'apis/Posts';
+import DynamicTable from 'components/DynamicTable';
+import IntlMessages from 'components/IntlMessages';
 import { notifyError } from 'components/Notification';
+import PageContent from 'components/PageContent';
 import useApi from 'hooks/UseApi';
+import useIntlMessage from 'hooks/UseIntlMessage';
 import React, { useEffect, useState } from 'react';
 
 const columns = [
@@ -42,14 +47,30 @@ const PostListPage: React.FC = () => {
     }, [error]);
 
     return (
-        <div className="products base-page">
-            <Table
-                columns={columns}
-                dataSource={data}
-                loading={loading}
-                rowKey="id"
-            />
-        </div>
+        <>
+            <Breadcrumb className="kdr-page-breadcrumbs">
+                <Breadcrumb.Item href="/">
+                    <HomeOutlined />
+                </Breadcrumb.Item>
+                <Breadcrumb.Item>
+                    <IntlMessages id="sidebar.post.list" />
+                </Breadcrumb.Item>
+                <Breadcrumb.Item>
+                    <IntlMessages id="sidebar.post.list.active" />
+                </Breadcrumb.Item>
+            </Breadcrumb>
+
+            <PageContent className="post-list-page">
+                <DynamicTable
+                    primaryTitle={useIntlMessage('sidebar.post.list.active')}
+                    loading={loading}
+                    columns={columns}
+                    dataSource={data}
+                    rowKey="id"
+                    scroll={{ x: 'max-content' }}
+                />
+            </PageContent>
+        </>
     );
 };
 
