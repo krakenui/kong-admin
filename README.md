@@ -19,6 +19,7 @@ Key goals:
 -   [Multiple languages](docs/multiple-languages.md)
 -   [Base stylesheet styles](docs/base-stylesheets.md)
 -   [Structure & layout](docs/structure-layout.md)
+-   [Screenshots](#screenshots)
 
 ## Quick start
 
@@ -82,3 +83,13 @@ Key goals:
     ```
 
 -   Production bundle resources at `build` directory.
+
+## Screenshots
+
+![1.png](docs/screenshots/1.png)
+
+![2.png](docs/screenshots/2.png)
+
+![3.png](docs/screenshots/3.png)
+
+![4.png](docs/screenshots/4.png)
