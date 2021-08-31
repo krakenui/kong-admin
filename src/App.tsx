@@ -7,17 +7,24 @@ import { ConnectedRouter } from 'connected-react-router';
 import React from 'react';
 import { Provider } from 'react-redux';
 import configureStore, { history } from 'store';
+import { loadStorageAuthUserInfo } from 'store/actions';
+
+const initialState = {
+    auth: {
+        user: loadStorageAuthUserInfo(),
+    },
+};
 
 const App: React.FC = () => {
-  const store = configureStore({});
+    const store = configureStore(initialState);
 
-  return (
-    <Provider store={store}>
-      <ConnectedRouter history={history}>
-        <AppLayout></AppLayout>
-      </ConnectedRouter>
-    </Provider>
-  );
+    return (
+        <Provider store={store}>
+            <ConnectedRouter history={history}>
+                <AppLayout></AppLayout>
+            </ConnectedRouter>
+        </Provider>
+    );
 };
 
 export default App;

@@ -11,13 +11,8 @@ import {
 } from '../ActionTypes';
 
 const initialSettings = {
-  navStyle: NAV_STYLE_FIXED,
   layoutType: LAYOUT_TYPE_FULL,
   themeType: THEME_TYPE_SEMI_DARK,
-  themeColor: THEME_COLOR,
-
-  width: window.innerWidth,
-  isDirectionRTL: false,
   locale: {
     languageId: 'english',
     locale: 'en',
@@ -28,26 +23,11 @@ const initialSettings = {
 
 const settings = (state = initialSettings, action: any) => {
   switch (action.type) {
-    case WINDOW_WIDTH:
-      return {
-        ...state,
-        width: action.width,
-      };
+    
     case THEME_TYPE:
       return {
         ...state,
         themeType: action.themeType,
-      };
-    case THEME_COLOR:
-      return {
-        ...state,
-        themeColor: action.themeColor,
-      };
-
-    case NAV_STYLE:
-      return {
-        ...state,
-        navStyle: action.navStyle,
       };
     case LAYOUT_TYPE:
       return {

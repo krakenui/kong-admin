@@ -1,4 +1,4 @@
-# Kong React Admin Template
+# Gurubo React Dashboard
 
 Key goals:
 
@@ -10,7 +10,17 @@ Key goals:
 - React hook + Rxjs for React hook
 - LESS style with `lessc`
 
-## Quick start develop
+### Table of contents
+
+- [Quick start](#quick-start)
+- [Quick develop without Backend APIs](docs/mock-api.md)
+- [Customize configurations](#customize-configurations)
+- [Production bundle](#production-bundle)
+- [Multiple languages](docs/multiple-languages.md)
+- [Base stylesheet styles](docs/base-stylesheet.md)
+- [Structure & layout](docs/structure-layout.md)
+
+## Quick start
 
 - Prerequisite:
 
@@ -45,43 +55,30 @@ Key goals:
 
 - Quick implement Front-end with mock json server. Update to `mock/db.json`. See more details from [official documents](https://github.com/typicode/json-server#getting-started).
 
-## Multiple languages
+## Production bundle
 
-Because [i18next is too big](https://www.i18next.com/overview/comparison-to-others#i-18-next-is-to-big) and it's must a wrapper for ReactJs.
+- Clean depedencies
 
-So We use a general internationalization library for ReactJs (pure ReactJs). It's `react-intl` from [`formatjs`](https://formatjs.io/)(origin from Yahoo).
-
-Before using that should be read [official documents](https://formatjs.io/docs/getting-started/application-workflow).
-
-- Update lang messages into `locale/{YOUR_LANG}/*.json`
-
-- Display this message with
-
-  ```javascript
-  import IntlMessages from 'components/IntlMessages';
-
-  <IntlMessages id="{MESSAGE_KEY}" />;
+  ```bash
+    yarn
   ```
 
-- Using utils format functions:
+- Update production environments at
 
-  - FormattedDate
-  - FormattedTime
-  - FormattedNumber
-  - FormattedList
-  - FormattedDisplayName
-  - FormattedDateParts
-  - FormattedTimeParts
-  - FormattedDateTimeRange
-    ...
-    See more from [official public interface](https://github.com/formatjs/formatjs/blob/main/packages/react-intl/index.ts)
-
-  Ex:
-
-  ```javascript
-    import { useIntl } from 'react-intl';
-
-    const intl = useIntl();
-
-    intl.formatDate(new Date();
+  ```bash
+    .env.production
   ```
+
+- Run linters to validate source code
+
+  ```bash
+    yarn lint
+  ```
+
+- Run build with production mode
+
+  ```bash
+    yarn build
+  ```
+
+- Production bundle resources at `build` directory.

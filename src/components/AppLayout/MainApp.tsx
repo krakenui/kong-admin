@@ -1,6 +1,5 @@
 import { Layout } from 'antd';
 import React from 'react';
-import { useRouteMatch } from 'react-router-dom';
 import AppRoutes from 'routes';
 
 import Sidebar from '../Sidebar';
@@ -8,20 +7,24 @@ import Topbar from '../Topbar';
 
 const { Content, Footer } = Layout;
 
-const MainApp = () => {
-  return (
-    <Layout className="base-app-layout">
-      <Sidebar />
-      <Layout>
-        <Topbar />
-        <Content className={`base-layout-content base-container-wrap`}>
-          <AppRoutes />
-          <Footer>
-            <div className="base-layout-footer-content">Copyright Company Name © 2018</div>
-          </Footer>
-        </Content>
-      </Layout>
+const MainApp = () => (
+    <Layout className="kdr-app-layout">
+        <Sidebar />
+        <Layout>
+            <Topbar />
+            <Content className="kdr-layout-content kdr-container-wrap">
+                <AppRoutes />
+                <Footer>
+                    <div className="kdr-layout-footer-content kdr-text-center">
+                        React Admin Dashboard | Copyright ©{' '}
+                        {new Date().getFullYear()}{' '}
+                        <a className="kdr-link" href="https://blogs.kongd.io/">
+                            Kongd.io
+                        </a>
+                    </div>
+                </Footer>
+            </Content>
+        </Layout>
     </Layout>
-  );
-};
+);
 export default MainApp;

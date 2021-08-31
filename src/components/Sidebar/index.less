@@ -1,36 +1,49 @@
-.base-site-logo {
-  img {
-    height: 40px;
-  }
+.kdr-popover-lang-scroll {
+  height: 60px !important;
 }
-.base-layout-sider-header {
-  .base-linebar {
-    top: unset !important;
-    left: 32px !important;
-  }
-}
-
-.base-sidebar-content {
-  .ant-menu-item {
-    span {
-      a {
-        padding: 10px 0;
-      }
+.kdr-app-sidebar {
+  .kdr-site-logo {
+    img {
+      height: 40px;
     }
+  }
 
-    &.ant-menu-item-selected {
+  &.kdr-layout-sider-header {
+    .kdr-linebar {
+      top: unset !important;
+      left: 32px !important;
+    }
+  }
+
+  .kdr-sidebar-content {
+    .ant-menu-item {
       span {
         a {
-          span {
-            color: inherit;
+          padding: 10px 0;
+        }
+      }
+
+      &.ant-menu-item-selected {
+        span {
+          a {
+            span {
+              color: inherit;
+            }
           }
         }
       }
     }
   }
-}
 
-.base-bottom-menu {
-  position: absolute;
-  bottom: 0;
+  .kdr-bottom-menu {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .ant-menu {
+    &.ant-menu-root {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
 }

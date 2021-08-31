@@ -1,25 +1,17 @@
 import axios from 'axios';
 
-const httpClient = axios.create({});
-
-httpClient.interceptors.request.use(
-  (config) => {
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
-);
+const httpClient = axios.create({
+    baseURL: process.env.REACT_APP_AUTH_API_URL,
+    timeout: 30 * 1000,
+    withCredentials: true,
+    headers: { accept: 'application/json' },
+});
 
 httpClient.interceptors.response.use(
-  (response) => {
-    const res = response.data;
-
-    return res;
-  },
-  (error) => {
-    return Promise.reject(error);
-  }
+    (response) => response.data,
+    (error) => {
+        return Promise.reject(error);
+    }
 );
 
 export default httpClient;

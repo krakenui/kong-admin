@@ -2,16 +2,16 @@ import './index.less';
 
 import { Drawer, Layout } from 'antd';
 import classNames from 'classnames';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleCollapsedSideNav, updateWindowWidth } from 'store/actions';
+import { toggleCollapsedSideNav } from 'store/actions';
 import {
   NAV_STYLE_DRAWER,
   NAV_STYLE_FIXED,
   NAV_STYLE_MINI_SIDEBAR,
   NAV_STYLE_NO_HEADER_EXPANDED_SIDEBAR,
   NAV_STYLE_NO_HEADER_MINI_SIDEBAR,
-  TAB_SIZE,
+  TAB_SIZE
 } from 'store/ActionTypes';
 
 import SidebarContent from './SidebarContent';
@@ -21,49 +21,46 @@ const { Sider } = Layout;
 const Sidebar = () => {
   const dispatch = useDispatch();
 
-  let { locale, width, themeType, navStyle } = useSelector((state: any) => state.settings);
-  let { navCollapsed, pathname } = useSelector((state: any) => state.common);
-
-  useEffect(() => {
-    window.addEventListener('resize', () => {
-      dispatch(updateWindowWidth(window.innerWidth));
-    });
-  }, [dispatch]);
+  const { width } = useSelector((state: any) => state.common);
+  const { navStyle } = useSelector((state: any) => state.common);
+  const { navCollapsed } = useSelector((state: any) => state.common);
 
   const drawerStyle = classNames(
     {
-      'base-collapsed-sidebar':
+      'kdr-collapsed-sidebar':
         (navStyle === NAV_STYLE_FIXED ||
           navStyle === NAV_STYLE_MINI_SIDEBAR ||
           navStyle === NAV_STYLE_NO_HEADER_EXPANDED_SIDEBAR) &&
-        width < TAB_SIZE,
+        width < TAB_SIZE
     },
     {
-      'base-mini-sidebar':
-        navStyle === NAV_STYLE_MINI_SIDEBAR || navStyle === NAV_STYLE_NO_HEADER_MINI_SIDEBAR,
+      'kdr-mini-sidebar':
+        navStyle === NAV_STYLE_MINI_SIDEBAR ||
+        navStyle === NAV_STYLE_NO_HEADER_MINI_SIDEBAR
     },
     {
-      'base-mini-custom-sidebar': navStyle === NAV_STYLE_NO_HEADER_MINI_SIDEBAR,
+      'kdr-mini-custom-sidebar': navStyle === NAV_STYLE_NO_HEADER_MINI_SIDEBAR
     },
     {
-      'base-custom-sidebar': navStyle === NAV_STYLE_NO_HEADER_EXPANDED_SIDEBAR,
+      'kdr-custom-sidebar': navStyle === NAV_STYLE_NO_HEADER_EXPANDED_SIDEBAR
     }
   );
 
   return (
     <Sider
-      className={`base-app-sidebar ${drawerStyle} base-layout-sider-dark`}
+      className={`kdr-app-sidebar ${drawerStyle} kdr-layout-sider-dark`}
       trigger={null}
       collapsed={
         width < TAB_SIZE
           ? false
-          : navStyle === NAV_STYLE_MINI_SIDEBAR || navStyle === NAV_STYLE_NO_HEADER_MINI_SIDEBAR
+          : navStyle === NAV_STYLE_MINI_SIDEBAR ||
+            navStyle === NAV_STYLE_NO_HEADER_MINI_SIDEBAR
       }
       collapsible
     >
       {navStyle === NAV_STYLE_DRAWER || width < TAB_SIZE ? (
         <Drawer
-          className={`base-drawer-sidebar base-drawer-sidebar-dark`}
+          className="kdr-drawer-sidebar kdr-drawer-sidebar-dark"
           placement="left"
           closable={false}
           visible={navCollapsed}

@@ -2,7 +2,7 @@ import { Pagination, Post } from 'models';
 import { from, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import http from './HttpClient';
+import http from './SafeHttpClient';
 
 export function getAllPosts(page: number, pageSize: number): Observable<Post[]> {
   return from(http.get(`posts?page=${page}&pageSize=${pageSize}`)).pipe(
