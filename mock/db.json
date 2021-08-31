@@ -601,6 +601,20 @@
       "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut"
     }
   ],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
-  "profile": { "name": "typicode" }
+  "users": [
+    {
+      "id": 1,
+      "name": "staff",
+      "email": "staff",
+      "password": "$2a$10$qx45LE2VhsgdytaX/5e.7.kVJxQWwUZFLeVLB8iF3nU1HKLYuehL6",
+      "roles": "staff"
+    },
+    {
+      "id": 2,
+      "name": "admin",
+      "email": "admin",
+      "password": "$2a$10$VLZCzE2NnJMU4LpV3dGjveSHgcWbhb2cmZ2mQHp6lUuksVbE/Lkxa",
+      "roles": "admin"
+    }
+  ]
 }

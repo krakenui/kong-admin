@@ -1,2 +1,73 @@
+
 {
-}
+    "ignorePatterns": ["**/*.json", "**/*.png", "**/*.svg"],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "airbnb",
+      "plugin:react/recommended",
+      "plugin:import/typescript"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint"],
+    "rules": {
+      "no-use-before-define": "off",
+      "no-use-before-declare": "off",
+      "@typescript-eslint/no-use-before-define": "off",
+      "@typescript-eslint/no-unused-vars": "error",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "react/jsx-filename-extension": [
+        2,
+        { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+      ],
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "js": "never",
+          "jsx": "never",
+          "ts": "never",
+          "tsx": "never"
+        }
+      ],
+      "comma-dangle": "off",
+      "operator-linebreak": "off",
+      "react/display-name": "off",
+      "no-nested-ternary": "off",
+      "object-curly-newline": "off",
+      "prefer-promise-reject-errors": "off",
+      "@typescript-eslint/no-empty-function": "off",
+      "consistent-return": "off",
+      "no-param-reassign": "off",
+      "no-underscore-dangle": "warn",
+      "import/prefer-default-export": "off",
+      "no-shadow": "off",
+      "react/jsx-one-expression-per-line": "off",
+      "jsx-a11y/no-noninteractive-element-interactions": "off",
+      "jsx-a11y/click-events-have-key-events": "off",
+      "indent": "off",
+      "@typescript-eslint/indent": "off",
+      "react/jsx-indent": "off",
+      "react/prop-types": "off",
+      "react/no-array-index-key": "off",
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-props-no-spreading": "off",
+      "prefer-template": "off",
+      "implicit-arrow-linebreak": "off",
+      "react/jsx-wrap-multilines": "off",
+      "function-paren-newline": "off",
+      "react/destructuring-assignment": "off",
+      "linebreak-style": 0
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "paths": ["src"],
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        }
+      },
+      "import/ignore": [".(css|less)$"]
+    }
+  }
+  

@@ -5,3 +5,10 @@
 public
 dist
 mock
+*.css
+*.svg
+*.png
+*.less
+src/assets/images/
+src/assets/images/*
+src/assets/images/**/*
