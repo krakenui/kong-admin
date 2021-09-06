@@ -10,7 +10,7 @@
 
 ## Mixins
 
-_Prefix base class with `kdr-` (ShiftAsia React - sar)_
+_Prefix base class with `kdr-` (Kongd React - kdr)_
 
 ### Margin - padding classess
 
