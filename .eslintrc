@@ -61,6 +61,7 @@
       "react/require-default-props": "off",
       "react/jsx-indent-props": "off",
       "lines-between-class-members": "off",
+      "import/no-extraneous-dependencies": "off",
       "linebreak-style": 0
     },
     "settings": {

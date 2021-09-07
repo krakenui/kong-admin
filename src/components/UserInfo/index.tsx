@@ -1,7 +1,7 @@
 import { Avatar, Popover } from 'antd';
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router';
 import { logOut } from 'store/actions';
 
 const UserInfo = () => {
@@ -23,15 +23,15 @@ const UserInfo = () => {
 
     return (
         <Popover
-          overlayClassName="kdr-popover-horizantal"
-          placement="bottomRight"
-          content={userMenuOptions}
-          trigger="click"
+            overlayClassName="kdr-popover-horizantal"
+            placement="bottomRight"
+            content={userMenuOptions}
+            trigger="click"
         >
             <Avatar
-              src="https://via.placeholder.com/150x150"
-              className="kdr-avatar kdr-pointer"
-              alt=""
+                src="https://via.placeholder.com/150x150"
+                className="kdr-avatar kdr-pointer"
+                alt=""
             />
         </Popover>
     );

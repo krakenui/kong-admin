@@ -3,7 +3,7 @@ import './index.less';
 import { Avatar, Popover } from 'antd';
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router';
 import { logOut } from 'store/actions';
 
 const UserProfile = () => {
@@ -36,10 +36,10 @@ const UserProfile = () => {
     return (
         <div className="kdr-user-profile kdr-flex-row kdr-align-items-center kdr-avatar-row kdr-justify-content-center">
             <Popover
-              placement="bottomRight"
-              content={userMenuOptions}
-              trigger="click"
-              className="kdr-align-items-center kdr-flex-row kdr-justify-content-center"
+                placement="bottomRight"
+                content={userMenuOptions}
+                trigger="click"
+                className="kdr-align-items-center kdr-flex-row kdr-justify-content-center"
             >
                 <div className="userName kdr-flex-column kdr-align-items-end kdr-justify-content-center kdr-pr-2">
                     <span className="kdr-user-account kdr-fs-lg kdr-text-capitalize">
@@ -51,9 +51,9 @@ const UserProfile = () => {
                 </div>
 
                 <Avatar
-                  src="https://via.placeholder.com/150x150"
-                  className="kdr-size-40 kdr-pointer"
-                  alt={user?.name}
+                    src="https://via.placeholder.com/150x150"
+                    className="kdr-size-40 kdr-pointer"
+                    alt={user?.name}
                 />
             </Popover>
         </div>

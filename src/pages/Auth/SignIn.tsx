@@ -7,7 +7,7 @@ import useIntlMessage from 'hooks/UseIntlMessage';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router';
 import { updateAuthUserInfo } from 'store/actions';
 
 const SignInPage: React.FC<any> = () => {
@@ -30,6 +30,7 @@ const SignInPage: React.FC<any> = () => {
     const onFinish = useCallback(
         (payload) => {
             setInProgress(true);
+
             const sub = login(payload).subscribe({
                 next: (res: any) => {
                     if (res != null) {
@@ -91,6 +92,7 @@ const SignInPage: React.FC<any> = () => {
                                 ]}
                             >
                                 <Input
+                                    type="text"
                                     size="large"
                                     prefix={<UserOutlined />}
                                     placeholder={useIntlMessage(
@@ -144,6 +146,7 @@ const SignInPage: React.FC<any> = () => {
                                     block
                                     type="primary"
                                     htmlType="submit"
+                                    id="btn-submit"
                                 >
                                     <IntlMessages id="page.content.login.form.submit" />
                                 </Button>
