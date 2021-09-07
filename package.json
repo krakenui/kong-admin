@@ -22,7 +22,7 @@
     "lint:ts-fix": "eslint --fix \"src/**/*.{ts,tsx}\"",
     "lint:styles": "stylelint \"src/**/*.{css,less}\"",
     "lint:styles-fix": "stylelint --fix \"src/**/*.{css,less}\"",
-    "test": "concurrently \"yarn mock\" \"react-app-rewired test\"",
+    "test": "concurrently \"yarn mock\" \"react-app-rewired test --watchAll\"",
     "eject": "react-app-rewired eject"
   },
   "dependencies": {
