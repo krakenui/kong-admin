@@ -3,7 +3,21 @@ import { cleanup, render, screen } from '__test__/TestAppRender';
 import { delay } from '__test__/Utils';
 import React from 'react';
 
+import { rest } from 'msw';
+import { setupServer } from 'msw/node';
 import SignInPage from './SignIn';
+
+const server = setupServer();
+const loginAdminSuccessResp = {
+    accessToken:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImlhdCI6MTYzMTAwMjQ4OCwiZXhwIjoxNjMxMDA2MDg4LCJzdWIiOiIyIn0.kbpe0c98FtJrlodx51aCZAbLQII-mZtAPm2Z6DKNfwQ',
+    user: {
+        id: 2,
+        name: 'Nico Robin',
+        email: 'admin@email.com',
+        roles: 'admin',
+    },
+};
 
 const setup = () => {
     const { container } = render(<SignInPage />);
@@ -11,10 +25,15 @@ const setup = () => {
     return { container };
 };
 
+beforeAll(() => server.listen());
+
 afterEach(() => {
     cleanup();
+    server.resetHandlers();
     window.localStorage.clear();
 });
+
+afterAll(() => server.close());
 
 test('Should be render login forms', () => {
     const { container } = setup();
@@ -40,6 +59,12 @@ test('Should be render login forms', () => {
 
 test('Should be login success with valid user info', async () => {
     const { container } = setup();
+
+    server.use(
+        rest.post('/api/auth/login', (req, res, ctx) => {
+            return res(ctx.status(200), ctx.json(loginAdminSuccessResp));
+        })
+    );
 
     const successMessageRegex =
         process.env.REACT_APP_TEST_LANG === 'ja'
@@ -81,6 +106,12 @@ test('Should be login success with valid user info', async () => {
 
 test('Should show alert when wrong password', async () => {
     const { container } = setup();
+
+    server.use(
+        rest.post('/api/auth/login', (req, res, ctx) => {
+            return res(ctx.status(400), ctx.text('Cannot find user'));
+        })
+    );
 
     const failMessageRegex =
         process.env.REACT_APP_TEST_LANG === 'ja'
